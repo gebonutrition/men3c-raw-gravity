@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     }
 
     const cleanEmail = email.trim();
-    const cleanLanding = String(landing || 'men3').trim();
+    const cleanLanding = String(landing || 'men3c').trim();
     const cleanSource = String(source || 'direct').trim();
     const cleanCreative = String(creative || 'unknown').trim();
 

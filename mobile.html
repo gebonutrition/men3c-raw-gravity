@@ -57,7 +57,7 @@ a:hover{color:#7ED4E8}
 
       <img src="assets/hero.png"
           alt=""
-          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 30%">
+          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 24%">
 
       <!-- LEFT DARK GRADIENT -->
       <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,13,.92) 0%,rgba(13,13,13,.6) 38%,rgba(13,13,13,0) 62%)"></div>
@@ -334,67 +334,73 @@ a:hover{color:#7ED4E8}
     </div>
   </div>
 
-  <!-- BLOCK 5: EMAIL CAPTURE -->
-  <div id="email-capture" style="background:#161616;padding:48px 18px">
-    <div style="background:#0D0D0D;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:32px 22px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px">
-      <div style="display:flex;flex-direction:column;align-items:center;gap:8px">
-        <h2 style="margin:0;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:-.3px;line-height:1.2">Get -48% on your first order</h2>
+  <!-- BLOCK 5: OFFER -->
+  <div id="email-capture" style="background:linear-gradient(180deg,#0D0D0D,#161616 30%,#161616);padding:48px 18px 32px">
+    <div style="background:radial-gradient(120% 55% at 50% 0%,rgba(85,198,224,.09),rgba(13,13,13,0) 60%),#0D0D0D;border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:40px 22px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px;box-shadow:0 40px 100px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.06)">
+
+      <h2 style="margin:0;font-size:26px;font-weight:900;text-transform:uppercase;letter-spacing:-.6px;line-height:1.05;text-wrap:balance">
+        Your first cup,<br>almost half off
+      </h2>
+
+      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:16px;width:100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.05)">
+        <div style="display:flex;align-items:baseline;justify-content:center;gap:8px;flex-wrap:wrap">
+          <span style="font-size:28px;font-weight:900;color:#55C6E0;line-height:1;letter-spacing:-.8px">$19.70</span>
+          <span style="font-size:15px;color:#6b6b6b;text-decoration:line-through">$37.70</span>
+          <span style="font-size:12px;font-weight:800;color:#fff;background:linear-gradient(90deg,#e0824a,#b8511f);padding:5px 9px;border-radius:999px;letter-spacing:.3px">-48%</span>
+        </div>
+        <div style="font-size:11px;color:#9A9A9A">Limited price — the lowest it's ever been</div>
       </div>
 
-      <div style="display:flex;flex-direction:column;gap:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px 16px;width:100%">
+      <a href="{{ amazonUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:stretch;border-radius:999px;overflow:hidden;font-family:Archivo,sans-serif;font-size:14px;font-weight:800;letter-spacing:.3px;line-height:1;width:100%;box-shadow:0 14px 34px rgba(224,130,74,.28),0 0 0 1px rgba(255,255,255,.06)" style-hover="opacity:.92;transform:translateY(-1px)">
+        <span style="background:#141414;color:#F5F5F5;display:flex;align-items:center;justify-content:center;padding:16px 16px;text-transform:lowercase;flex:none;border-right:1px solid rgba(255,255,255,.08)">amazon</span>
+        <span style="background:linear-gradient(90deg,#e0824a,#b8511f);color:#fff;display:flex;align-items:center;justify-content:center;padding:16px 14px;flex:1;white-space:nowrap">Try Raw Coffee Now</span>
+      </a>
 
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-          <span style="background:#55C6E0;color:#0D0D0D;font-size:10px;font-weight:800;letter-spacing:.08em;padding:5px 8px;border-radius:5px">LIMITED</span>
-          <span style="font-size:11px;color:#9A9A9A">Lowest price ever</span>
-        </div>
-
-        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-          <span style="font-size:30px;line-height:1;font-weight:900;color:#55C6E0">$19.70</span>
-          <span style="font-size:15px;line-height:1;color:#6b6b6b;text-decoration:line-through">$37.70</span>
-          <span style="background:#F5F5F5;color:#0D0D0D;font-size:11px;font-weight:800;padding:5px 8px;border-radius:5px;margin-left:auto">-48%</span>
-        </div>
-
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px solid rgba(255,255,255,.1);padding-top:10px">
-          <span style="font-size:11px;color:#9A9A9A">Your -48% off expires in:</span>
-          <span style="font-size:14px;line-height:1;color:#55C6E0;font-weight:700;font-variant-numeric:tabular-nums">{{ timerMin }}:{{ timerSec }}</span>
-        </div>
-
-      </div>
-
-      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
-        <div style="background:rgba(85,198,224,.12);border:1px solid #55C6E0;border-radius:14px;padding:18px 20px;font-size:14px;font-weight:600;color:#55C6E0">
-          ✓ Code sent to {{ emailValue }} — check your inbox.
-        </div>
-      </sc-if>
-      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
-        <form onsubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:10px;width:100%">
-          <input
-            type="email"
-            required="{{ true }}"
-            value="{{ emailValue }}"
-            oninput="{{ handleEmailInput }}"
-            placeholder="you@email.com"
-            style="box-sizing:border-box;width:100%;background:#161616;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:14px 18px;font-size:15px;color:#F5F5F5;font-family:Archivo,sans-serif;text-align:center"
-          >
-
-          <button
-            type="submit"
-            disabled="{{ btnDisabled }}"
-            style="box-sizing:border-box;width:100%;border:none;border-radius:999px;padding:15px 18px;font-size:15px;font-weight:800;font-family:Archivo,sans-serif;color:#fff;background:linear-gradient(90deg,#e0824a,#b8511f);opacity:{{ btnOpacity }};cursor:{{ btnCursor }}"
-            style-hover="opacity:.88"
-          >
-            Get my discount →
-          </button>
-        </form>
-      </sc-if>
-
-      <p style="margin:0;font-size:12px;color:#9A9A9A">No spam · No subscription required · Cancel anytime</p>
-      <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);width:100%;font-size:12px;color:#9A9A9A">
+      <div style="display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);width:100%;font-size:12px;color:#9A9A9A">
         <span>🛡 30-day money-back</span>
         <span>🚚 Free US shipping</span>
         <span>🔒 Secure checkout</span>
       </div>
-      
+
+    </div>
+  </div>
+
+  <!-- BLOCK 6: COMMUNITY NEWSLETTER -->
+  <div id="community-signup" style="background:#161616;padding:0 18px 64px">
+    <div style="border:1px solid rgba(85,198,224,.25);border-radius:22px;padding:28px 20px;display:flex;flex-direction:column;gap:16px;text-align:center;background:#0D0D0D;box-shadow:inset 0 1px 0 rgba(255,255,255,.05)">
+
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:center">
+        <div style="display:flex;align-items:center;gap:10px;justify-content:center;font-size:10px;letter-spacing:2.5px;color:#55C6E0;font-weight:700;text-transform:uppercase">
+          <span style="width:20px;height:1px;background:#55C6E0"></span>
+          Newsletter
+          <span style="width:20px;height:1px;background:#55C6E0"></span>
+        </div>
+
+        <div style="font-size:24px;font-weight:900;text-transform:uppercase;letter-spacing:-.4px;line-height:1.05;color:#F5F5F5;text-wrap:balance">
+          Join the <span style="color:#55C6E0">Raw Gravity</span> community
+        </div>
+
+        <div style="font-size:13px;line-height:1.45;color:#9A9A9A;text-wrap:pretty">
+          Leave your email to get early access to discounts, deals and Raw Gravity events.
+        </div>
+      </div>
+
+      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+        <form onsubmit="{{ handleSubmit }}" style="display:flex;gap:8px;flex-direction:column;width:100%">
+          <input type="email" required="{{ true }}" placeholder="you@email.com" style="width:100%;box-sizing:border-box;background:#161616;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:14px 18px;font-size:14px;color:#F5F5F5;font-family:Archivo,sans-serif;text-align:center;box-shadow:inset 0 2px 6px rgba(0,0,0,.4)">
+
+          <button type="submit" style="flex:none;border:1px solid #55C6E0;border-radius:999px;padding:14px 22px;font-size:14px;font-weight:800;font-family:Archivo,sans-serif;color:#55C6E0;background:transparent;cursor:pointer">
+            Subscribe
+          </button>
+        </form>
+      </sc-if>
+
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="font-size:14px;font-weight:700;color:#55C6E0">
+          ✓ You're on the list
+        </div>
+      </sc-if>
+
     </div>
   </div>
 
@@ -534,12 +540,25 @@ class Component extends DCLogic {
 
   renderVals() {
     const s = this.state.secondsLeft;
+    const amazonSource = (
+      new URLSearchParams(window.location.search).get('source') || 'meta'
+    ).toLowerCase();
+
+    const amazonUrls = {
+      tiktok: 'https://www.amazon.com/dp/B0GTWB11LW?maas=maas_adg_9EAB36473ED1EB5F2AC4DBD00BF649CE_afap_abs&ref_=aa_maas&tag=maas',
+      meta: 'https://www.amazon.com/dp/B0GTWB11LW?maas=maas_adg_B05D582BAB7E5BC8F40DEBA1EBC61AEE_afap_abs&ref_=aa_maas&tag=maas',
+      klaviyo: 'https://www.amazon.com/dp/B0GTWB11LW?maas=maas_adg_25B95FF8BD805EF1A9DF6465C32333F9_afap_abs&ref_=aa_maas&tag=maas',
+      instagram: 'https://www.amazon.com/dp/B0GTWB11LW?maas=maas_adg_DA3922AD16009007A17A120E9C2F3E79_afap_abs&ref_=aa_maas&tag=maas'
+    };
+
+    const amazonUrl = amazonUrls[amazonSource] || amazonUrls.meta;
     const mm = String(Math.floor(s / 60)).padStart(2, '0');
     const ss = String(s % 60).padStart(2, '0');
     const emailValid = this.isValidEmail();
     return {
       timerMin: mm,
       timerSec: ss,
+      amazonUrl,
       benefits: [
         { icon: { __html: ICON_BOLT }, text: 'Steady energy for 6+ hours — no spike, no crash' },
         { icon: { __html: ICON_TARGET }, text: 'Sharper focus through deep work and training' },
